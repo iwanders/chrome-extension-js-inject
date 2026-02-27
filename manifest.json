@@ -2,10 +2,7 @@
   "name": "Minimal Javascript Inject",
   "version": "0.0.1",
   "manifest_version": 3,
-  "description": "Injecting stuff",
-  "browser_action": {
-    "default_title": "Inject Javascript into the page."
-  },
+  "description": "Injecting stuff", 
   "permissions":[
     "contextMenus",
     "activeTab",
@@ -15,6 +12,10 @@
     "https://*/*",
     "http://*/*"
   ],
+  "background":{
+    "service_worker": "background.js"
+  },
+  "action":{},
   "content_scripts": [
     {
       "matches": [
@@ -33,5 +34,10 @@
         "specific_site.js"
       ]
     }
-  ]
+  ],
+  "commands":{
+    "foo":{
+      "description": "foo on this string"
+    }
+  }
 }
